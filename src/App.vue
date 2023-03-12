@@ -1,29 +1,31 @@
-<template>
-<p>SAimple text</p>
-</template>
-<script>
-export default {
-  dta() {
-    return {
-      activePage: 0,
-      page: [
-        {
-          link: {text: 'Home', url: 'index.html'},
-          pageTitle: 'Home Page',
-          content: 'This is the home content'
-        },
-        {
-          link: {text: 'About', url: 'about.html'},
-          pageTitle: 'About Page',
-          content: 'This is the about content'
-        },
-        {
-          link: {text: 'Contact', url: 'content.html'},
-          pageTitle: 'Contact Page',
-          content: 'This is the content content'
-        }
-      ]
-    }
-  }
-}
+<script setup>
+import {ref} from "vue"
+
+let count = ref(0)
 </script>
+
+<template>
+<main>
+      <container class="container">
+        <h4>the current count is...</h4>
+        <h1>{{count}}</h1>
+        <button @click="count++">+</button>
+        <button @click="count--">-</button>
+      </container>
+  </main>
+</template>
+
+<style scoped>
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+}
+</style>
